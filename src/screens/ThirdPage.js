@@ -8,11 +8,14 @@ if (!firebase.apps.length) {
   firebase.initializeApp(FIREBASE_CONFIG);
 }
 
-function writeUserData (email,fname,lname){
+function writeUserData (nombre,email, telefono,comensales,fecha,hora){
   firebase.database().ref('users/').set({
+      nombre,
       email,
-      fname,
-      lname
+      telefono,
+      comensales,
+      fecha,
+      hora
   }).then((data)=>{
       //success callback
       console.log('data ' , data)
@@ -50,7 +53,7 @@ export default class ThirdPage extends Component {
         
         <TouchableOpacity 
          onPress={() =>
-         {writeUserData('rodlupanow@hotmail.com','Diaz','Ro')}
+         {writeUserData('Don gato','dongato@micasa.com','8257718', '5', '8-10-2004','10pm')}
         }
         >
         <Text style={styles.ItemStyle}>

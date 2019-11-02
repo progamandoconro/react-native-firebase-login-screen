@@ -6,18 +6,26 @@ import Paragraph from "../components/Paragraph";
 import Button from "../components/Button";
 import { logoutUser } from "../api/auth-api";
 
-const Dashboard = () => (
+const Dashboard = ({navigation}) => (
   <Background>
     <Logo />
-    <Header>Let’s start</Header>
+    <Header>Cactus Restaurante</Header>
     <Paragraph>
-      Your amazing app starts here. Open you favourite code editor and start
-      editing this project.
+    Gracias por su visita. 
     </Paragraph>
     <Button mode="outlined" onPress={() => logoutUser()}>
       Logout
     </Button>
+
+    <Button  onPress={() => navigation.navigate("mainPage")}>
+      RESERVAS:
+    </Button>
   </Background>
+
+
+
+
+
 );
 
 export default memo(Dashboard);

@@ -17,7 +17,7 @@ const Dashboard = ({navigation}) => (
       Logout
     </Button>
 
-    <Button  onPress={() => navigation.navigate("mainPage")}>
+    <Button mode="outlined" onPress={() => navigation.navigate("mainPage")}>
       RESERVAS:
     </Button>
   </Background>

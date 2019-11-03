@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { StyleSheet, View, Text, Button, FlatList, TouchableOpacity } from 'react-native';
 import Background from "../components/Background";
 
-
 import firebase from 'firebase'
 import { FIREBASE_CONFIG } from "../core/config";
 
@@ -10,14 +9,9 @@ if (!firebase.apps.length) {
   firebase.initializeApp(FIREBASE_CONFIG);
 }
 
-function writeUserData (nombre,email, telefono,comensales,fecha,hora){
-  firebase.database().ref('users/').set({
-      nombre,
-      email,
-      telefono,
-      comensales,
-      fecha,
-      hora
+const writeUserData =(userInfo)=> {
+  firebase.database().ref('users/').push({
+      userInfo
   }).then((data)=>{
       //success callback
       console.log('data ' , data)
@@ -27,18 +21,9 @@ function writeUserData (nombre,email, telefono,comensales,fecha,hora){
   })
 }
 
-
- 
-
 export default class ThirdPage extends Component {
-    static navigationOptions = {
-    title: 'Mis Reservas:',
-  };
-  render() {
-    const { navigate } = this.props.navigation;
-
-    
-
+  
+  render() {    
     return (
       <Background>
       <View>
@@ -47,15 +32,12 @@ export default class ThirdPage extends Component {
         </Text>
         <Text style={styles.TextStyle}>
         {this.props.navigation.state.params.JSON_ListView_Clicked_Item}
-        </Text>
-        
+        </Text>  
         <Text style={styles.TextStyle}>
-         
         </Text>
-        
         <TouchableOpacity 
          onPress={() =>
-         {writeUserData('Don gato','dongato@micasa.com','8257718', '5', '8-10-2004','10pm')}
+         {writeUserData('hola usuario otra vez ')}
         }
         >
         <Text style={styles.ItemStyle}>

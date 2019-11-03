@@ -24,7 +24,7 @@ class FirstPage extends Component {
       <View> 
       <ScrollView>
 
-      <Text style={{fontStyle:'italic'}}> Reservar: </Text>
+      <Text style={{fontStyle:'italic'}}>  </Text>
 
         <TextInput
           value={this.state.username}
@@ -32,9 +32,9 @@ class FirstPage extends Component {
           placeholder={' Nombre: '}
           style={styles.input}
           placeholderTextColor='black'
+          
 
         />
-
         <TextInput
           value={this.state.phone}
           onChangeText={phone => this.setState({ phone })}
@@ -47,7 +47,7 @@ class FirstPage extends Component {
         <TextInput
           value={this.state.comensales}
           onChangeText={comensales => this.setState({ comensales })}
-          placeholder={' Número de Comensales:                                        '}
+          placeholder={' N# Comensales:                                        '}
           style={styles.input}
           placeholderTextColor='black'
 
@@ -70,8 +70,13 @@ class FirstPage extends Component {
           placeholderTextColor='black'
           
         />
+
+        
+      <View style={styles.button}>
         <Button
           title="Reservar"
+          color="#F6820D"
+          
           
           onPress={() =>
             navigate('SecondPage', {
@@ -80,6 +85,7 @@ class FirstPage extends Component {
             })            
           }
         />
+        </View>
       
       </ScrollView>
 </View>
@@ -95,7 +101,14 @@ const styles = StyleSheet.create({
     padding: 10,
     marginBottom: 10,
     backgroundColor: '#D3D3D3',
+    borderRadius:20,
         
+  },
+
+  button:{
+    borderRadius:40,
+    backgroundColor:"#F6820D",
+    
   },
   
 });

@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import { Text, View, StyleSheet, Animated } from 'react-native'
 import Emoji from 'react-native-emoji'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import Background from "../components/Background";
 
 export default class mainPage extends Component  {
   state = {
@@ -16,39 +17,19 @@ export default class mainPage extends Component  {
     }
 
     static navigationOptions = {
-
-    
         title: 'Restaurante Cactus ',
       };
       render() {
-
         const { navigate } = this.props.navigation;
-        
-        return (
-
- 
-    <View style={{
-    flex:1,
-    backgroundColor:'#fdf2b8', 
-    position:'absolute',  
-    top: 0, left: 0, 
-    right: 0, bottom: 0, 
-    justifyContent:'center',
-    alignItems:'center'}} > 
+          return (
+    <Background>     
           <Animated.View  >
-
           <TouchableOpacity onPress ={() => this._start()}>  
-          <Emoji 
-          
+          <Emoji   
           name = "pizza"
-          style={{fontSize: 40, textAlign:'center'}} 
-          
+          style={{fontSize: 40, textAlign:'center'}}        
           /> 
-
-
-          <Text style={{fontSize:30,fontStyle:'italic',textAlign:'center'}}>Contáctanos</Text> 
-          
-
+          <Text style={{fontSize:30,fontStyle:'italic',textAlign:'center'}}>Contáctanos</Text>
           </TouchableOpacity> 
           <TouchableOpacity onPress={() => this._start()}>  
           <Emoji 
@@ -82,15 +63,10 @@ export default class mainPage extends Component  {
           style={{fontSize: 60, textAlign:'center'}} 
           
           /> 
-
-          
           <Text style={{fontSize:40,fontStyle:'italic',textAlign:'center'}}>Cactus</Text> 
-          
-          
           </TouchableOpacity> 
           </Animated.View>
-         
-          </View>
+          </Background> 
     
   );
 }

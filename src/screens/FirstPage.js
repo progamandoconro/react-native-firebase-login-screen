@@ -70,14 +70,10 @@ class FirstPage extends Component {
           placeholderTextColor='black'
           
         />
-
-        
       <View style={styles.button}>
         <Button
           title="Reservar"
           color="#F6820D"
-          
-          
           onPress={() =>
             navigate('SecondPage', {
               JSON_ListView_Clicked_Item: " Nombre: "+ this.state.username +  " Email: " + this.state.email  + " Comensales: " + this.state.comensales+ " Fecha: " + this.state.fecha+  " Hora: "+this.state.hora,

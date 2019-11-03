@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, Button, FlatList, TouchableOpacity } from 'react-native';
+import Background from "../components/Background";
+
 
 import firebase from 'firebase'
 import { FIREBASE_CONFIG } from "../core/config";
@@ -38,8 +40,8 @@ export default class ThirdPage extends Component {
     
 
     return (
-     
-      <View style={styles.container}>
+      <Background>
+      <View>
         <Text>
           Su reserva está en proceso:
         </Text>
@@ -61,19 +63,12 @@ export default class ThirdPage extends Component {
         </Text>
         </TouchableOpacity>
       </View>
+      </Background>
     );
   }
 }
 const styles = StyleSheet.create({
-  container: {
-    flex:1,
-    backgroundColor:'#fdf2b8', 
-    position:'absolute',  
-    top: 0, left: 0, 
-    right: 0, bottom: 0, 
-    justifyContent:'center',
-    alignItems:'center'
-  },
+  
   TextStyle: {
     fontSize: 23,
     textAlign: 'center',

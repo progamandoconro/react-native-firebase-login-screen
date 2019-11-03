@@ -4,6 +4,7 @@ import Background from "../components/Background";
 
 import firebase from 'firebase'
 import { FIREBASE_CONFIG } from "../core/config";
+import { stringify } from 'qs';
 
 if (!firebase.apps.length) {
   firebase.initializeApp(FIREBASE_CONFIG);
@@ -20,9 +21,7 @@ const writeUserData =(userInfo)=> {
       console.log('error ' , error)
   })
 }
-
 export default class ThirdPage extends Component {
-  
   render() {    
     return (
       <Background>
@@ -35,9 +34,15 @@ export default class ThirdPage extends Component {
         </Text>  
         <Text style={styles.TextStyle}>
         </Text>
+        
         <TouchableOpacity 
          onPress={() =>
-         {writeUserData('hola usuario otra vez ')}
+         {
+          writeUserData(stringify(this.props.navigation.state.params.JSON_ListView_Clicked_Item))
+          console.log(stringify(this.props.navigation.state.params.JSON_ListView_Clicked_Item))
+         
+         }
+         
         }
         >
         <Text style={styles.ItemStyle}>

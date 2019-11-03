@@ -34,19 +34,16 @@ export default class ThirdPage extends Component {
         </Text>  
         <Text style={styles.TextStyle}>
         </Text>
-        
         <TouchableOpacity 
          onPress={() =>
          {
           writeUserData(stringify(this.props.navigation.state.params.JSON_ListView_Clicked_Item))
           console.log(stringify(this.props.navigation.state.params.JSON_ListView_Clicked_Item))
-         
-         }
-         
+         }      
         }
         >
         <Text style={styles.ItemStyle}>
-          Ir a Página de espera 
+          Click para enviar Reserva a Real Time Data Base Firebase
         </Text>
         </TouchableOpacity>
       </View>

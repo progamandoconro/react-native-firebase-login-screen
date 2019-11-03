@@ -3,9 +3,7 @@ import { Text, View, StyleSheet, Animated } from 'react-native'
 import Emoji from 'react-native-emoji'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 
-
-
-export default class MainPage extends Component  {
+export default class mainPage extends Component  {
   state = {
         fadeValue: new Animated.Value(2)
       };

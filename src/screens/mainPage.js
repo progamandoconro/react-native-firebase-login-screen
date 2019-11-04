@@ -33,26 +33,19 @@ export default class mainPage extends Component  {
           </TouchableOpacity> 
           <TouchableOpacity onPress={() => this._start()}>  
           <Emoji 
-          
           name = "sushi"
           style={{fontSize: 40, textAlign:'center'}} 
-          
           /> 
-
           <Text style={{fontSize:30,fontStyle:'italic',textAlign:'center'}}>Mis Reservas</Text> 
-          
           </TouchableOpacity> 
           <TouchableOpacity onPress ={() => navigate ('FirstPage')}>  
 
           <Emoji 
-          
           name = "hamburger"
           style={{fontSize: 40, textAlign:'center'}} 
-          
-        
           /> 
 
-          <Text style={{fontSize:30,textAlign:'center',fontStyle:'italic'}}>Reservar:</Text> 
+          <Text style={{fontSize:30,textAlign:'center',fontStyle:'italic'}}>Reservar</Text> 
 
           </TouchableOpacity> 
           <TouchableOpacity onPress ={() => navigate ('FirstPage')} > 

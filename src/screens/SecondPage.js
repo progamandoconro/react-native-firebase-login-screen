@@ -3,29 +3,21 @@ import { StyleSheet, View, Text, Button, FlatList } from 'react-native';
 import { TextInput, ScrollView, TouchableOpacity, TouchableHighlight } from 'react-native-gesture-handler';
 import Background from "../components/Background";
 
-
 export default class SecondPage extends Component {
-
   static navigationOptions = {
-    
     title: 'Mis Reservas',
   };
   render() {
-    
     const { navigate } = this.props.navigation;
-
-
     return (
      <Background>
-    
         <Text>
           Su reserva:
         </Text>
      
          <Text style={styles.TextStyle}>
           {this.props.navigation.state.params.JSON_ListView_Clicked_Item}
-        </Text>
-           
+        </Text>    
         <View>        
         <TouchableOpacity 
          onPress={() =>

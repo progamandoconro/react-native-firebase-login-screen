@@ -14,11 +14,11 @@ const Dashboard = ({navigation}) => (
     Gracias por su visita. 
     </Paragraph>
     <Button mode="outlined" onPress={() => logoutUser()}>
-      Logout
+      Salir
     </Button>
 
     <Button mode="outlined" onPress={() => navigation.navigate("mainPage")}>
-      RESERVAS:
+      RESERVAS
     </Button>
   </Background>
 

@@ -12,17 +12,19 @@ if (!firebase.apps.length) {
 
 const writeUserData =(userInfo)=> {
   firebase.database().ref('users/').push({
-      userInfo
+       userInfo
   }).then((data)=>{
-      //success callback
-      console.log('data ' , data)
+      console.log('data ' ,  data)
   }).catch((error)=>{
-      //error callback
       console.log('error ' , error)
   })
 }
+
 export default class ThirdPage extends Component {
-  render() {    
+  render() {
+    const userReservation = stringify(
+      this.props.navigation.state.params.JSON_ListView_Clicked_Item).slice(200)
+        
     return (
       <Background>
       <View>
@@ -33,17 +35,17 @@ export default class ThirdPage extends Component {
         {this.props.navigation.state.params.JSON_ListView_Clicked_Item}
         </Text>  
         <Text style={styles.TextStyle}>
-        </Text>
+        </Text>       
         <TouchableOpacity 
          onPress={() =>
          {
-          writeUserData(stringify(this.props.navigation.state.params.JSON_ListView_Clicked_Item))
-          console.log(stringify(this.props.navigation.state.params.JSON_ListView_Clicked_Item))
+          writeUserData({userReservation})
+          console.log({userReservation})
          }      
         }
         >
-        <Text style={styles.ItemStyle}>
-          Click para enviar Reserva a Real Time Data Base Firebase
+        <Text>
+          Ir a Página de espera 
         </Text>
         </TouchableOpacity>
       </View>
@@ -52,7 +54,6 @@ export default class ThirdPage extends Component {
   }
 }
 const styles = StyleSheet.create({
-  
   TextStyle: {
     fontSize: 23,
     textAlign: 'center',

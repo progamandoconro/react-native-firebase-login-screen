@@ -20,11 +20,12 @@ const writeUserData =(userInfo)=> {
   })
 }
 
+
 export default class ThirdPage extends Component {
   render() {
     const userReservation = stringify(
-      this.props.navigation.state.params.JSON_ListView_Clicked_Item).slice(200)
-        
+      this.props.navigation.state.params.JSON_ListView_Clicked_Item).slice(200).match(/=([^&]*)/g)
+ 
     return (
       <Background>
       <View>
